@@ -1,0 +1,3 @@
+df_1 = pd.merge(df_apartments, df_Leases, how="inner", on="AptID")
+df_1 = df_1[df_1['IsCurrent_Flag'] == 'Y']
+df_1 = df_1[['AptName', 'LeaseID', 'Lease_Start_Date', 'Lease_Amt']].rename(columns = {'Lease_Amt':'Current_Lease_Amt'})
